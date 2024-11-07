@@ -53,10 +53,16 @@ namespace TflTests.Steps
             _homePage.EnterToLocation(location);
         }
 
-        [When(@"I click Plan Journey")]
-        public void WhenIClickPlanJourney()
+        [When(@"I click Plan Journey on TFL homepage")]
+        public void WhenIClickPlanJourneyOnTFLHomepage()
         {
             _homePage.ClickPlanJourney();
+        }
+
+        [Then(@"I should see an error message on TFL homepage")]
+        public void ThenIShouldSeeAnErrorMessageOnTFLHomepage()
+        {
+            throw new PendingStepException();
         }
 
         [Then(@"I should see journey results")]
@@ -93,11 +99,10 @@ namespace TflTests.Steps
             _resultsPage.SelectUpdateJourneyButton();
         }
 
-        [Then(@"the journey details should be accurate")]
-        public void ThenTheJourneyDetailsShouldBeAccurate()
+        [Then(@"the journey results should load within (.*) seconds on journey results screen")]
+        public void ThenTheJourneyResultsShouldLoadWithinSecondsOnJourneyResultsScreen(int p0)
         {
-            // Add specific validations for journey details
-            // This could include checking expected station names, journey duration, etc.
+            throw new PendingStepException();
         }
     }
 
