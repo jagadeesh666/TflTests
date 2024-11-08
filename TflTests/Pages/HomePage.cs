@@ -20,14 +20,14 @@ public class HomePage
 
     public void EnterFromLocation(string location)
     {
-        var fromField = _driver.FindElement(HomePageLocators.FromField);
+        var fromField = _wait.Until(d=> d.FindElement(HomePageLocators.FromField));
         fromField.SendKeys(location);
         SelectFromAutocomplete();
     }
 
     public void EnterToLocation(string location)
     {
-        var toField = _driver.FindElement(HomePageLocators.ToField);
+        var toField = _wait.Until(d => d.FindElement(HomePageLocators.ToField));
         toField.SendKeys(location);
         SelectFromAutocomplete();
     }

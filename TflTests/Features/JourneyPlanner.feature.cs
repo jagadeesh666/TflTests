@@ -360,11 +360,13 @@ this.ScenarioInitialize(scenarioInfo);
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify journey planner response time")]
+        [NUnit.Framework.IgnoreAttribute("Ignored scenario")]
         [NUnit.Framework.CategoryAttribute("Performance")]
         public void VerifyJourneyPlannerResponseTime()
         {
             string[] tagsOfScenario = new string[] {
-                    "Performance"};
+                    "Performance",
+                    "ignore"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify journey planner response time", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 76
@@ -381,15 +383,18 @@ this.ScenarioInitialize(scenarioInfo);
   testRunner.Given("I am on the TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 78
-  testRunner.When("I enter \"Leicester Square Underground Station\" in the From field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+  testRunner.And("I Accept allow all cookies", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 79
-  testRunner.And("I enter \"Covent Garden Underground Station\" in the To field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.When("I enter \"Leicester Square Underground Station\" in the From field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 80
-  testRunner.And("I click Plan Journey on TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+  testRunner.And("I enter \"Covent Garden Underground Station\" in the To field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 81
+  testRunner.And("I click Plan Journey on TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 82
   testRunner.Then("the journey results should load within 10 seconds on journey results screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

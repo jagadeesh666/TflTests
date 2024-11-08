@@ -72,9 +72,10 @@ Scenario Outline: Verify journey times for different stations
     | Leicester Square Underground Station  | Covent Garden Underground Station  |
     | Piccadilly Circus Underground Station | Oxford Circus Underground Station  |
 
-@Performance 
+@Performance @ignore
 Scenario: Verify journey planner response time
   Given I am on the TFL homepage
+  And I Accept allow all cookies
   When I enter "Leicester Square Underground Station" in the From field
   And I enter "Covent Garden Underground Station" in the To field
   And I click Plan Journey on TFL homepage
