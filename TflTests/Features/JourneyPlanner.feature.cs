@@ -108,7 +108,7 @@ this.ScenarioInitialize(scenarioInfo);
     testRunner.And("I enter \"Covent Garden Underground Station\" in the To field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
-    testRunner.And("I click Plan Journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I click Plan Journey on TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 14
     testRunner.Then("I should see journey results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -152,7 +152,7 @@ this.ScenarioInitialize(scenarioInfo);
     testRunner.And("I enter \"Covent Garden Underground Station\" in the To field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 23
-    testRunner.And("I click Plan Journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I click Plan Journey on TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 24
     testRunner.Then("I should see journey results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
@@ -174,14 +174,14 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Verify journey planner response time")]
-        [NUnit.Framework.CategoryAttribute("Performance")]
-        public void VerifyJourneyPlannerResponseTime()
+        [NUnit.Framework.DescriptionAttribute("Verify view details")]
+        [NUnit.Framework.CategoryAttribute("smoke")]
+        public void VerifyViewDetails()
         {
             string[] tagsOfScenario = new string[] {
-                    "Performance"};
+                    "smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify journey planner response time", null, tagsOfScenario, argumentsOfScenario, featureTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify view details", null, tagsOfScenario, argumentsOfScenario, featureTags);
 #line 31
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -193,19 +193,37 @@ this.ScenarioInitialize(scenarioInfo);
             {
                 this.ScenarioStart();
 #line 32
-  testRunner.Given("I am on the TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+    testRunner.Given("I am on the TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 33
-  testRunner.When("I enter \"Leicester Square\" in the From field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+    testRunner.And("I Accept allow all cookies", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 34
-  testRunner.And("I enter \"Covent Garden\" in the To field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.When("I enter \"Leicester Square Underground Station\" in the From field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 35
-  testRunner.And("I click Plan Journey", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+    testRunner.And("I enter \"Covent Garden Underground Station\" in the To field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 36
-  testRunner.Then("the journey results should load within 5 seconds on journey results screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+    testRunner.And("I click Plan Journey on TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 37
+    testRunner.Then("I should see journey results", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 38
+    testRunner.And("I should see walking and cycling times on journey results screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 39
+    testRunner.And("I select Edit preferences on journey results screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 40
+    testRunner.And("I select route with least walking distance on journey results screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 41
+    testRunner.And("I click update journey button on journey results screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 42
+    testRunner.And("I view details on journey results screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -220,7 +238,7 @@ this.ScenarioInitialize(scenarioInfo);
                     "Smoke"};
             System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify error message for invalid location", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 39
+#line 45
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -230,20 +248,61 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 40
+#line 46
   testRunner.Given("I am on the TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 41
-  testRunner.When("I enter \"XXXXX\" in the From field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line 47
+  testRunner.And("I Accept allow all cookies", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 42
-  testRunner.And("I enter \"Covent Garden\" in the To field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line 48
+  testRunner.When("I click Plan Journey on TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 43
+#line 49
+  testRunner.Then("I should see From error message \"The From field is required.\" on TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+#line 50
+  testRunner.Then("I should see To error message \"The To field is required.\" on TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify unable to plan journey when no locations entered")]
+        [NUnit.Framework.CategoryAttribute("Smoke")]
+        public void VerifyUnableToPlanJourneyWhenNoLocationsEntered()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Smoke"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify unable to plan journey when no locations entered", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 53
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 54
+  testRunner.Given("I am on the TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 55
+  testRunner.And("I Accept allow all cookies", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 56
+  testRunner.When("I enter \"_\" in the From field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 57
+  testRunner.And("I enter \"_\" in the To field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 58
   testRunner.And("I click Plan Journey on TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 44
-  testRunner.Then("I should see an error message on TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line 59
+  testRunner.Then("I should see an error message on journey results screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
@@ -252,9 +311,8 @@ this.ScenarioInitialize(scenarioInfo);
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Verify journey times for different stations")]
         [NUnit.Framework.CategoryAttribute("Regression")]
-        [NUnit.Framework.TestCaseAttribute("Leicester Square", "Covent Garden", null)]
-        [NUnit.Framework.TestCaseAttribute("Piccadilly Circus", "Oxford Circus", null)]
-        [NUnit.Framework.TestCaseAttribute("Victoria", "Liverpool Street", null)]
+        [NUnit.Framework.TestCaseAttribute("Leicester Square Underground Station", "Covent Garden Underground Station", null)]
+        [NUnit.Framework.TestCaseAttribute("Piccadilly Circus Underground Station", "Oxford Circus Underground Station", null)]
         public void VerifyJourneyTimesForDifferentStations(string fromStation, string toStation, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -268,7 +326,7 @@ this.ScenarioInitialize(scenarioInfo);
             argumentsOfScenario.Add("FromStation", fromStation);
             argumentsOfScenario.Add("ToStation", toStation);
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify journey times for different stations", null, tagsOfScenario, argumentsOfScenario, featureTags);
-#line 47
+#line 62
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
@@ -278,20 +336,61 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 48
+#line 63
   testRunner.Given("I am on the TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
-#line 49
+#line 64
+    testRunner.And("I Accept allow all cookies", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 65
   testRunner.When(string.Format("I enter \"{0}\" in the From field", fromStation), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 50
+#line 66
   testRunner.And(string.Format("I enter \"{0}\" in the To field", toStation), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 51
+#line 67
   testRunner.And("I click Plan Journey on TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 52
+#line 68
   testRunner.Then("I should see walking and cycling times on journey results screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("Verify journey planner response time")]
+        [NUnit.Framework.CategoryAttribute("Performance")]
+        public void VerifyJourneyPlannerResponseTime()
+        {
+            string[] tagsOfScenario = new string[] {
+                    "Performance"};
+            System.Collections.Specialized.OrderedDictionary argumentsOfScenario = new System.Collections.Specialized.OrderedDictionary();
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Verify journey planner response time", null, tagsOfScenario, argumentsOfScenario, featureTags);
+#line 76
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            if ((TagHelper.ContainsIgnoreTag(tagsOfScenario) || TagHelper.ContainsIgnoreTag(featureTags)))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 77
+  testRunner.Given("I am on the TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+#line hidden
+#line 78
+  testRunner.When("I enter \"Leicester Square Underground Station\" in the From field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 79
+  testRunner.And("I enter \"Covent Garden Underground Station\" in the To field", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 80
+  testRunner.And("I click Plan Journey on TFL homepage", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 81
+  testRunner.Then("the journey results should load within 10 seconds on journey results screen", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

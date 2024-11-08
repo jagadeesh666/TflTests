@@ -11,6 +11,7 @@ using Microsoft.TestPlatform;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit;
 using Assert = NUnit.Framework.Assert;
+using static Microsoft.ApplicationInsights.MetricDimensionNames.TelemetryContext;
 
 namespace TflTests.Steps
 {
@@ -59,10 +60,30 @@ namespace TflTests.Steps
             _homePage.ClickPlanJourney();
         }
 
-        [Then(@"I should see an error message on TFL homepage")]
-        public void ThenIShouldSeeAnErrorMessageOnTFLHomepage()
+        [Then(@"I should see From error message ""([^""]*)"" on TFL homepage")]
+        public void ThenIShouldSeeFromErrorMessageOnTFLHomepage(string errorMessage)
         {
-            throw new PendingStepException();
+            string actualMessage = _homePage.GetFromErrorMessage();
+            string expectedMessage = errorMessage;
+            
+            Assert.That(actualMessage, Is.EqualTo(expectedMessage), "Actual message does not match expected message");
+        }
+
+        [Then(@"I should see To error message ""([^""]*)"" on TFL homepage")]
+        public void ThenIShouldSeeToErrorMessageOnTFLHomepage(string errorMessage)
+        {
+            string actualMessage = _homePage.GetToErrorMessage();
+            string expectedMessage = errorMessage;
+
+            Assert.That(actualMessage, Is.EqualTo(expectedMessage), "Actual message does not match expected message");
+        }
+
+
+        [Then(@"I should see an error message on journey results screen")]
+        public void ThenIShouldSeeAnErrorMessageOnJourneyResultsScreen()
+        {
+            Assert.That(_resultsPage.ErrorMessageDisplayed(), "Error Message not displayed");
+            //Sorry, we can't find a journey matching your criteria
         }
 
         [Then(@"I should see journey results")]
@@ -97,6 +118,12 @@ namespace TflTests.Steps
         public void ThenIClickUpdateJourneyButtonOnJourneyResultsScreen()
         {
             _resultsPage.SelectUpdateJourneyButton();
+        }
+
+        [Then(@"I view details on journey results screen")]
+        public void ThenIViewDetailsOnJourneyResultsScreen()
+        {
+            _resultsPage.ClickViewDetails();
         }
 
         [Then(@"the journey results should load within (.*) seconds on journey results screen")]

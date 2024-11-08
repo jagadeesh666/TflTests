@@ -14,12 +14,9 @@ namespace TflTests.Pages.Locators
          public static readonly By JourneyResults = By.CssSelector("span.jp-results-headline");
          public static readonly By EditPreferences = By.XPath("//button[text()='Edit preferences']");
          public static readonly By LeastWalkingDistanceRoute = By.XPath("//label[text()='Routes with least walking']");
-         //public static readonly By UpdateJourneyButton = By.CssSelector("input.primary-button plan-journey-button[value='Update journey']");
-         public static readonly By UpdateJourneyButton = By.CssSelector("input[type='submit'][value='Update journey'].primary-button.plan-journey-button:nth-of-type(2)");
-
-        //public static readonly By UpdateJourneyButton = By.CssSelector("input[type='submit'][value='Update journey']");
-        //var updateJourneyButton = _driver.FindElement(By.XPath("//input[@type='submit' and @value='Update journey']"));
-
+         public static readonly By UpdateJourneyButton = By.XPath("//*[@id='more-journey-options']/div/fieldset/div[2]/div/input[2]");
+         public static readonly By ViewDetails = By.XPath("//button[@class='secondary-button show-detailed-results view-hide-details' and @aria-hidden='true']");
+         public static readonly By ErrorMessage = By.CssSelector("li.field-validation-error");
 
     }
 }

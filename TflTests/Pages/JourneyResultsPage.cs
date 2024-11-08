@@ -25,7 +25,6 @@ namespace TflTests.Pages
         {
             var walkingTimeElement = _wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(JourneyResultsPageLocators.WalkingTime));
             return walkingTimeElement.Text;
-
         }
 
         public string GetCyclingTime()
@@ -37,6 +36,10 @@ namespace TflTests.Pages
         public bool AreResultsDisplayed()
         {
             return _wait.Until(d => d.FindElement(JourneyResultsPageLocators.JourneyResults)).Displayed;
+        }
+        public bool ErrorMessageDisplayed()
+        {
+            return _wait.Until(d => d.FindElement(JourneyResultsPageLocators.ErrorMessage)).Displayed;
         }
 
         public void ClickEditPreferences()
@@ -53,10 +56,14 @@ namespace TflTests.Pages
 
         public void SelectUpdateJourneyButton()
         {
-            //_driver.FindElement(JourneyResultsPageLocators.UpdateJourneyButton).Click();
             var selectUpdateJourneyButton = _wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(JourneyResultsPageLocators.UpdateJourneyButton));
-            selectUpdateJourneyButton.SendKeys(Keys.Enter);
             selectUpdateJourneyButton.Click();
+        }
+
+        public void ClickViewDetails()
+        {
+            var viewDetails = _wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementIsVisible(JourneyResultsPageLocators.ViewDetails));
+            viewDetails.Click();
         }
     }
 }
